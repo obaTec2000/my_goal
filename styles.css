@@ -1,0 +1,197 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background: #282c34;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    animation: fadeIn 2s;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Main Content Styles */
+main {
+    flex: 1;
+    padding: 20px 0;
+    animation: fadeInUp 1.5s;
+}
+
+.goals, .current-time, .links {
+    margin-bottom: 40px;
+}
+
+h2, h3 {
+    margin-bottom: 20px;
+    color: #333;
+    animation: slideInLeft 1s;
+}
+
+a {
+    display: block;
+    color: #007BFF;
+    text-decoration: none;
+    margin-bottom: 10px;
+    animation: zoomIn 1s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Goals Section Styles */
+.goals {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    animation: fadeInUp 1.5s;
+    transition: transform 0.3s ease-in-out;
+}
+
+.goals:hover {
+    transform: scale(1.02);
+}
+
+.goals h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.8em;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
+}
+
+.goals ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.goals li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #555;
+    transition: color 0.3s ease-in-out;
+}
+
+.goals li::before {
+    content: "✔";
+    color: #007BFF;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(0.2em);
+    transition: color 0.3s ease-in-out;
+}
+
+.goals li:hover {
+    color: #007BFF;
+}
+
+.goals li:hover::before {
+    color: #0056b3;
+}
+
+/* Current Time Section Styles */
+.current-time {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1.5s;
+}
+
+.current-time h3 {
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
+}
+
+.current-time .info-item {
+    margin-bottom: 15px;
+}
+
+.current-time .info-item p {
+    font-weight: bold;
+    color: #333;
+}
+
+.current-time .info-item span {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 1.1em;
+    color: #555;
+    animation: slideInRight 1s;
+}
+
+/* Footer Styles */
+footer {
+    background: #282c34;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+}
